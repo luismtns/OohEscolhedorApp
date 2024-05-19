@@ -1,4 +1,4 @@
-package br.com.luisbovo.ohescolhedor
+package br.com.luisbovo.ohescolhedor.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
@@ -15,13 +15,15 @@ fun CustomText( text: String,
                 fontSize: TextUnit = MaterialTheme.typography.bodyMedium.fontSize,
                 textAlign: TextAlign? = null,
                 color: Color = MaterialTheme.colorScheme.onBackground,
-style: TextStyle = MaterialTheme.typography.bodyMedium) {
+                style: TextStyle = MaterialTheme.typography.bodyMedium,
+                modifier: Modifier = Modifier
+) {
     Text(
         text = text,
         style = style.copy(fontSize = fontSize),
         lineHeight = MaterialTheme.typography.displaySmall.lineHeight,
         textAlign = textAlign,
         color = color,
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
     )
 }

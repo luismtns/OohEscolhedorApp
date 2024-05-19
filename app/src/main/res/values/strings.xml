@@ -2,7 +2,9 @@
     <string name="app_name">OhEscolhedor</string>
     <string name="app_emoji">🔮</string>
     <string name="app_title">Ooh Escolhedor!</string>
-    <string name="field_placeholder">Digite uma opção</string>
+    <string name="field_label">Suas opções:</string>
+    <string name="field_empty">Nenhuma opção ainda 👌</string>
+    <string name="field_placeholder">O que gostaria de escolher?</string>
     <string name="toast_error">Por favor, insira uma opção</string>
     <string name="toast_error_action">Adicione algumas opções primeiro</string>
     <string name="icon_add">Adicionar opção</string>

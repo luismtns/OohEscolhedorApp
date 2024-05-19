@@ -1,4 +1,4 @@
-package br.com.luisbovo.ohescolhedor
+package br.com.luisbovo.ohescolhedor.components
 
 
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -42,22 +42,21 @@ fun CustomTextField(
     onValueChange: (TextFieldValue) -> Unit,
     placeholder: String,
     modifier: Modifier = Modifier,) {
-    val focusManager = LocalFocusManager.current
+    val localFocusManager = LocalFocusManager.current
 
-    Box(modifier = modifier
+    Column(modifier = modifier
         .fillMaxWidth()
         .pointerInput(Unit) {
             detectTapGestures(onTap = {
-                focusManager.clearFocus()
+                localFocusManager.clearFocus()
             })
         }
     ) {
-        Column {
             OutlinedTextField(
                 value = value,
                 onValueChange = onValueChange,
                 placeholder = { Text(placeholder) }
             )
-        }
+
     }
 }

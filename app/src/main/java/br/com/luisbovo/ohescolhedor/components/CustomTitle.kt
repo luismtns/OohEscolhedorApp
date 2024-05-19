@@ -1,4 +1,4 @@
-package br.com.luisbovo.ohescolhedor
+package br.com.luisbovo.ohescolhedor.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -12,5 +12,5 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun CustomTitle(text: String, fontSize: TextUnit = MaterialTheme.typography.displayMedium.fontSize, textAlign: TextAlign? = TextAlign.Center) {
-    Text(text = text, style = MaterialTheme.typography.displayMedium.copy(fontSize = fontSize), textAlign = textAlign, color = MaterialTheme.colorScheme.primary, modifier = Modifier.fillMaxWidth().padding(top=16.dp, bottom = 32.dp))
+    Text(text = text, style = MaterialTheme.typography.displayMedium.copy(fontSize = fontSize), textAlign = textAlign, color = MaterialTheme.colorScheme.primary, modifier = Modifier.fillMaxWidth().padding(top=8.dp, bottom = 16.dp))
 }

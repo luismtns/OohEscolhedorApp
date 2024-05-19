@@ -1,4 +1,4 @@
-package br.com.luisbovo.ohescolhedor
+package br.com.luisbovo.ohescolhedor.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

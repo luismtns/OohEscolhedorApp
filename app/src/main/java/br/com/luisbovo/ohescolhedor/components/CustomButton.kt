@@ -1,4 +1,4 @@
-package br.com.luisbovo.ohescolhedor
+package br.com.luisbovo.ohescolhedor.components
 
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
