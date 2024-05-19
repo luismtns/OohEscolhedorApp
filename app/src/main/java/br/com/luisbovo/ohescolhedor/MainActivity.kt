@@ -21,20 +21,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AppTheme(darkTheme = false) {
-                Scaffold (
-                    bottomBar = {
-                        DisplayVersion()
-                    },
-                ){innerPadding ->
-                    Column(
-                        modifier = Modifier
-                            .padding(innerPadding),
-                        verticalArrangement = Arrangement.spacedBy(16.dp),
-                    ) {
-                        OhEscolhedorApp()
-                     }
+                    OhEscolhedorApp()
                 }
             }
         }
-    }
 }

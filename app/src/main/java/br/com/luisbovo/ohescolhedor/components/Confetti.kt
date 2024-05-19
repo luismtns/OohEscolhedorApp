@@ -1,7 +1,13 @@
 package br.com.luisbovo.ohescolhedor.components
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.zIndex
 import com.example.compose.errorContainerLightMediumContrast
 import com.example.compose.onPrimaryLight
 import com.example.compose.primaryContainerLight
@@ -20,8 +26,9 @@ import me.nikhilchaudhari.quarks.particle.Velocity
 @Composable
 fun Confetti(
     modifier:Modifier = Modifier,
-            durationMillis:Int = 4000
+    durationMillis:Int = 4000
 ) {
+    Box(modifier = Modifier.fillMaxSize().zIndex(10f),) {
     CreateParticles(
         modifier = modifier,
         x = 500f, y = -200f,
@@ -29,9 +36,19 @@ fun Confetti(
         force = Force.Gravity(0.3f),
         acceleration = Acceleration(),
         particleSize = ParticleSize.RandomSizes(20..60),
-        particleColor = ParticleColor.RandomColors(listOf(primaryLight, onPrimaryLight, primaryContainerLight, tertiaryLight, tertiaryContainerLight, errorContainerLightMediumContrast)),
+        particleColor = ParticleColor.RandomColors(
+            listOf(
+                primaryLight,
+                onPrimaryLight,
+                primaryContainerLight,
+                tertiaryLight,
+                tertiaryContainerLight,
+                errorContainerLightMediumContrast
+            )
+        ),
         lifeTime = LifeTime(355f, 2f),
         emissionType = EmissionType.FlowEmission(maxParticlesCount = 220, emissionRate = 0.8f),
         durationMillis
     )
+}
 }
