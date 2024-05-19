@@ -4,7 +4,7 @@ OhEscolhedor é um aplicativo Android desenvolvido em Kotlin usando Jetpack Comp
 
 ## Baixe o APK
 
-🚀 É possível baixar a última versão do APK [clicando aqui](https://github.com/luismtns/OohEscolhedorApp/releases/latest).
+🚀 É possível baixar a última versão do APK [clicando aqui](https://github.com/luismtns/OohEscolhedorApp/releases/download/v1.0/app-release.apk).
 
 ## Funcionalidades
 
