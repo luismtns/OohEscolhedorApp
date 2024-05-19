@@ -10,10 +10,6 @@ O objetivo do aplicativo é permitir que os usuários insiram várias opções e
 
 🚀 É possível baixar a última versão do APK [clicando aqui](https://github.com/luismtns/OohEscolhedorApp/releases/download/v1.0/app-release.apk).
 
-<p align="center">
-  <img width="364"  src="https://github.com/luismtns/OohEscolhedorApp/assets/31661255/f3739831-7096-4bca-87ad-ca5e19af3be4">
-</p>
-
 ## Funcionalidades
 
 - Adicionar várias opções para sorteio.
@@ -31,8 +27,9 @@ Para configurar o projeto localmente, siga os passos abaixo:
 - Gradle 7.0 ou mais recente.
 - JDK 8 ou mais recente.
 
-### Clonando o Repositório
+### Screenshot
 
-```sh
-git clone https://github.com/seu-usuario/ohescolhedor.git
-cd ohescolhedor
+<p align="center">
+  <img width="364"  src="https://github.com/luismtns/OohEscolhedorApp/assets/31661255/f3739831-7096-4bca-87ad-ca5e19af3be4">
+</p>
+
