@@ -1,7 +1,6 @@
 package br.com.luisbovo.ohescolhedor
 
 import android.widget.Toast
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -12,8 +11,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.zIndex
 import kotlinx.coroutines.delay
 
 @Composable
@@ -26,8 +29,19 @@ fun OhEscolhedorApp() {
     var hasResult by remember { mutableStateOf(false) }
     val context = LocalContext.current
 
+    if(hasResult){
+        LaunchedEffect(key1 = true) {
+            delay(6000)
+            hasResult = false
+        }
+        Confetti(modifier = Modifier
+            .fillMaxSize()
+            .zIndex(10f))
+    }
+
     Column(modifier = Modifier.padding(16.dp)) {
-        CustomTitle(text = "Ooh Escolhedor!")
+        CustomText(text = stringResource(R.string.app_emoji), fontSize = 52.sp, textAlign = TextAlign.Center)
+        CustomTitle(text = stringResource(R.string.app_title))
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -39,7 +53,7 @@ fun OhEscolhedorApp() {
             CustomTextField(
                 value = currentOption,
                 onValueChange = { currentOption = it },
-                placeholder = "Digite uma opção",
+                placeholder = stringResource(R.string.field_placeholder),
                 modifier = Modifier.weight(1f)
             )
             FilledIconButton(
@@ -48,16 +62,21 @@ fun OhEscolhedorApp() {
                         options = options + currentOption.text
                         currentOption = TextFieldValue("")
                     } else {
-                        Toast.makeText(context, "Por favor, insira uma opção", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, R.string.toast_error, Toast.LENGTH_SHORT).show()
                     }
                 },
             ){
-                Icon(Icons.Filled.Add, contentDescription = "Adicionar opção")
+                Icon(Icons.Filled.Add, contentDescription = stringResource(R.string.icon_add))
             }
         }
         Spacer(modifier = Modifier.height(16.dp))
         OptionsList(options)
         Spacer(modifier = Modifier.height(16.dp))
+        Column (
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxWidth()
+        ){
+
         CustomButton(
             onClick = {
                 if (options.isNotEmpty() && !isSpinning) {
@@ -65,23 +84,17 @@ fun OhEscolhedorApp() {
                     selectedOption = options.random()
                     focusManager.clearFocus()
                 } else if (options.isEmpty()) {
-                    Toast.makeText(context, "Adicione algumas opções primeiro", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.toast_error_action, Toast.LENGTH_SHORT).show()
                 }
             },
-            text = "Sortear",
-            enabled = options.isNotEmpty()
+            text = stringResource(id = R.string.custom_button_text) ,
+            enabled = options.size > 1
         )
+        }
         Spacer(modifier = Modifier.height(8.dp))
         RouletteWheel(options, selectedOption, isSpinning ){
             isSpinning = false
             hasResult = true
-        }
-        if(hasResult){
-            LaunchedEffect(key1 = true) {
-                delay(10*1000)
-                hasResult = false
-            }
-            Confetti(modifier = Modifier.fillMaxWidth().height(500.dp))
         }
     }
 }

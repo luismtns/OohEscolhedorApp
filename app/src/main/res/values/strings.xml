@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">OhEscolhedor</string>
+    <string name="app_emoji">🔮</string>
+    <string name="app_title">Ooh Escolhedor!</string>
+    <string name="field_placeholder">Digite uma opção</string>
+    <string name="toast_error">Por favor, insira uma opção</string>
+    <string name="toast_error_action">Adicione algumas opções primeiro</string>
+    <string name="icon_add">Adicionar opção</string>
+    <string name="custom_button_text">decida Ooh Escolhedor!</string>
 </resources>

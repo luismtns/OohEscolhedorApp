@@ -9,9 +9,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
-import br.com.luisbovo.ohescolhedor.ui.theme.Purple40
 
 @Composable
 fun CustomTitle(text: String, fontSize: TextUnit = MaterialTheme.typography.displayMedium.fontSize, textAlign: TextAlign? = TextAlign.Center) {
-    Text(text = text, style = MaterialTheme.typography.displayMedium.copy(fontSize = fontSize), textAlign = textAlign, color = Purple40, modifier = Modifier.fillMaxWidth().padding(top=32.dp, bottom = 32.dp))
+    Text(text = text, style = MaterialTheme.typography.displayMedium.copy(fontSize = fontSize), textAlign = textAlign, color = MaterialTheme.colorScheme.primary, modifier = Modifier.fillMaxWidth().padding(top=16.dp, bottom = 32.dp))
 }

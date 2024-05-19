@@ -51,13 +51,12 @@ fun CustomTextField(
                 focusManager.clearFocus()
             })
         }
-        .padding(16.dp)
     ) {
         Column {
             OutlinedTextField(
-        value = value,
-        onValueChange = onValueChange,
-        placeholder = { Text(placeholder) }
+                value = value,
+                onValueChange = onValueChange,
+                placeholder = { Text(placeholder) }
             )
         }
     }
