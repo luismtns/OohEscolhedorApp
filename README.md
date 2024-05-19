@@ -29,7 +29,4 @@ Para configurar o projeto localmente, siga os passos abaixo:
 
 ### Screenshot
 
-<p align="center">
   <img width="364"  src="https://github.com/luismtns/OohEscolhedorApp/assets/31661255/f3739831-7096-4bca-87ad-ca5e19af3be4">
-</p>
-
