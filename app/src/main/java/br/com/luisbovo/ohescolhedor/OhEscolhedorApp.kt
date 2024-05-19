@@ -50,7 +50,6 @@ fun OhEscolhedorApp() {
         .zIndex(10f)
     )
   }
-  Confetti()
 
   Scaffold(
     bottomBar = {
