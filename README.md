@@ -1,10 +1,19 @@
 # OhEscolhedor 🔮
 
-OhEscolhedor é um aplicativo Android desenvolvido em Kotlin usando Jetpack Compose. O objetivo do aplicativo é permitir que os usuários insiram várias opções e sorteiem uma delas de maneira divertida, utilizando uma animação de roleta.
+![logo_escolhedor](https://github.com/luismtns/OohEscolhedorApp/assets/31661255/03e25dca-d870-49f3-9010-c7c9470939b6)
+<p align="center">
+  <img width="280"  src="https://github.com/luismtns/OohEscolhedorApp/assets/31661255/03e25dca-d870-49f3-9010-c7c9470939b6">
+</p>
+OhEscolhedor é um aplicativo Android desenvolvido em Kotlin usando Jetpack Compose e Material Design 3.
+O objetivo do aplicativo é permitir que os usuários insiram várias opções e sorteiem uma delas de maneira divertida, utilizando uma animação de roleta e uma comemoração especial.
 
 ## Baixe o APK
 
 🚀 É possível baixar a última versão do APK [clicando aqui](https://github.com/luismtns/OohEscolhedorApp/releases/download/v1.0/app-release.apk).
+
+<p align="center">
+  <img width="364"  src="https://github.com/luismtns/OohEscolhedorApp/assets/31661255/f3739831-7096-4bca-87ad-ca5e19af3be4">
+</p>
 
 ## Funcionalidades
 
