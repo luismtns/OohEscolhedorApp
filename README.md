@@ -10,7 +10,7 @@ O objetivo do aplicativo é permitir que os usuários insiram várias opções e
 
 ## Baixe o APK
 
-🚀 É possível baixar a última versão do APK [clicando aqui](https://github.com/luismtns/OohEscolhedorApp/releases/download/v1.0/app-release.apk).
+🚀 É possível baixar a última versão do APK [clicando aqui](https://github.com/luismtns/OohEscolhedorApp/releases/download/v1.1/app-release.apk).
 
 ## Funcionalidades
 
