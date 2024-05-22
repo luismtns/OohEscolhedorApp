@@ -6,7 +6,9 @@
     <string name="field_empty">Nenhuma opção ainda 👌</string>
     <string name="field_placeholder">O que gostaria de escolher?</string>
     <string name="toast_error">Por favor, insira uma opção</string>
+    <string name="toast_error_duplicity">Opção já inserida</string>
     <string name="toast_error_action">Adicione algumas opções primeiro</string>
     <string name="icon_add">Adicionar opção</string>
+    <string name="icon_remove">Remover opção</string>
     <string name="custom_button_text">decida Ooh Escolhedor!</string>
 </resources>

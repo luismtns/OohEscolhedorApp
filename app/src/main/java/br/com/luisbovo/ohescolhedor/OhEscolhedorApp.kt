@@ -1,5 +1,6 @@
 package br.com.luisbovo.ohescolhedor
 
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
@@ -41,13 +42,18 @@ fun OhEscolhedorApp() {
   val context = LocalContext.current
 
    fun addOption() {
-     if (currentOption.text.isNotEmpty()) {
+     if (options.indexOf(currentOption.text) > -1){
+       Toast.makeText(context, R.string.toast_error_duplicity, Toast.LENGTH_SHORT).show()
+     } else if (currentOption.text.isNotEmpty()) {
        options = options + currentOption.text
        currentOption = TextFieldValue("")
      } else {
        Toast.makeText(context, R.string.toast_error, Toast.LENGTH_SHORT).show()
      }
 
+  }
+  val onDrop: (String) -> Unit = { option ->
+    options = options.filter { it != option }
   }
 
   if (hasResult) {
@@ -82,7 +88,6 @@ fun OhEscolhedorApp() {
         CustomTitle(text = stringResource(R.string.app_title))
         Row(
           modifier = Modifier
-            .fillMaxWidth()
             .fillMaxWidth(),
           horizontalArrangement = Arrangement.spacedBy(16.dp),
           verticalAlignment = Alignment.CenterVertically,
@@ -108,7 +113,7 @@ fun OhEscolhedorApp() {
           color = MaterialTheme.colorScheme.secondary,
           textAlign = TextAlign.Center
         )
-        OptionsList(options)
+        OptionsList(options,onDrop)
         Spacer(modifier = Modifier.height(16.dp))
         Column(
           horizontalAlignment = Alignment.CenterHorizontally,

@@ -23,21 +23,6 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 
-//@Composable
-//fun CustomTextField(
-//    value: TextFieldValue,
-//    onValueChange: (TextFieldValue) -> Unit,
-//    placeholder: String,
-//    modifier: Modifier = Modifier,
-//) {
-//    OutlinedTextField(
-//        value = value,
-//        onValueChange = onValueChange,
-//        modifier = modifier,
-//        placeholder = { Text(placeholder) }
-//    )
-//}
-
 @Composable
 fun CustomTextField(
     value: TextFieldValue,
