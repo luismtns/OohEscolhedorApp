@@ -17,6 +17,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlin.math.absoluteValue
+import kotlin.random.Random
+import kotlin.random.nextInt
 
 @Composable
 fun RouletteWheel(
@@ -33,14 +35,14 @@ fun RouletteWheel(
 
     LaunchedEffect(isSpinning) {
         if (isSpinning) {
-            targetRotation += 360f * 10 // 10 full spins
+            targetRotation += (360f * Random.nextInt(8,16) )// 16 full spins
             animate(
                 initialValue = rotation,
                 targetValue = targetRotation,
                 animationSpec = tween(durationMillis = 6*1000, easing = CubicBezierEasing(0.5f, 1f, 0.89f, 1f))
             ) { value, _ ->
                 rotation = value
-                currentIndex = ((value / 360f * options.size) % options.size).absoluteValue.toInt()
+                currentIndex = Random.nextInt((((options.size*value) % options.size).absoluteValue.toInt()),options.size)
                 displayedOption = options.getOrNull(currentIndex)
             }
             hasResult=true;
@@ -63,9 +65,9 @@ fun RouletteWheel(
             CustomText(
                 text = displayedOption ?: "escolha!",
                 style = MaterialTheme.typography.displayMedium,
-                fontSize = if(hasResult)42.sp else 32.sp,
+                fontSize = if(hasResult && !isSpinning)42.sp else 32.sp,
                 textAlign = TextAlign.Center,
-                color = if(hasResult) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onBackground.copy(alpha = 0.5f)
+                color = if(hasResult && !isSpinning) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onBackground.copy(alpha = 0.5f)
             )
         }
     }

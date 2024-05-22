@@ -29,6 +29,7 @@ import br.com.luisbovo.ohescolhedor.components.OptionsList
 import br.com.luisbovo.ohescolhedor.components.RouletteWheel
 import kotlinx.coroutines.delay
 
+
 @Composable
 fun OhEscolhedorApp() {
   var options by remember { mutableStateOf(listOf<String>()) }
@@ -38,6 +39,16 @@ fun OhEscolhedorApp() {
   var isSpinning by remember { mutableStateOf(false) }
   var hasResult by remember { mutableStateOf(false) }
   val context = LocalContext.current
+
+   fun addOption() {
+     if (currentOption.text.isNotEmpty()) {
+       options = options + currentOption.text
+       currentOption = TextFieldValue("")
+     } else {
+       Toast.makeText(context, R.string.toast_error, Toast.LENGTH_SHORT).show()
+     }
+
+  }
 
   if (hasResult) {
     LaunchedEffect(key1 = true) {
@@ -81,17 +92,11 @@ fun OhEscolhedorApp() {
             value = currentOption,
             onValueChange = { currentOption = it },
             placeholder = stringResource(R.string.field_placeholder),
-            modifier = Modifier.weight(1f)
+            modifier = Modifier.weight(1f),
+            onEnterPressed = {addOption()}
           )
           FilledIconButton(
-            onClick = {
-              if (currentOption.text.isNotEmpty()) {
-                options = options + currentOption.text
-                currentOption = TextFieldValue("")
-              } else {
-                Toast.makeText(context, R.string.toast_error, Toast.LENGTH_SHORT).show()
-              }
-            },
+            onClick = { addOption() },
           ) {
             Icon(Icons.Filled.Add, contentDescription = stringResource(R.string.icon_add))
           }
